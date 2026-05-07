@@ -1,0 +1,46 @@
+# Analysis
+Each of the below files needs to be copied into the `analysis/` folder. For each file, after it is copied in, we need to do a tidy up procedure.
+The details of how we are to process each file are outlined in `file-processing-guide.md`.
+- [ ] /Users/letitia/Dropbox/auditory_HRF/auditory-hrf/analyses_2025/scripts/pre-processing scripts/ix_get_ERAs_no_corrth.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/Experiment1/Sep_2023/scripts/Cluster_groups_updated291124.R
+- [ ] /Users/letitia/Dropbox/auditory_HRF/Experiment1/Sep_2023/session_comparison_March/Clustering_160924_t18_ses1/analyze_clusters.m
+- [ ] /Users/letitia/Documents/Isma_auditoryHRF_scripts/ERA_t18/Cluster_groups_correlations_031224.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/Cluster_groups_correlations_031224.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/Experiment1/Sep_2023/scripts/final_scripts/updated_Feb_2025/surface_ERA_corr_clustgroup.csh
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/Figures/Clustering/Cluster_nvoxels_groups_Fig1.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/fitting cluster means/fitting_twogamma_clustermeans.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/fitting cluster means/getAdjustedRsquared.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/fitting cluster means/create_basisfunction.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/fitting cluster means/fitting_twogamma_clustermeans_subplot.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/Clustering/Comparison_models_clustermeans.R
+- [ ] /Users/letitia/Dropbox/auditory_HRF/Experiment1/Sep_2023/scripts/final_scripts/updated_Feb_2025/Marty-labels-EPI-22-11-24.sh
+- [ ] /Users/letitia/Documents/Isma_auditoryHRF_scripts/Marty_ROIs_090125/roi_remove_duplicates_modified_110225.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/training_model_fitting_roi_avg_no_ERA_SD_corr_fittingallses.m
+- [ ] /Users/letitia/Dropbox/HiHi/scripts/training_model_fitting_roi_avg_no_ERA_SD_corr_fittingallses.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/ROI_mat_to_textfiles.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/Create_datatable_ROIs_params.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/Experiment1/Sep_2023/scripts/final_scripts/updated_Feb_2025/peak_fwhm_Marty-ROIs-surface.csh
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/training_model_fitting.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/trial_effects/simulate_data.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/trial_effects/training_model_fitting_trialeffect_simulatedData.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/trial_effects/training_model_fitting_trialeffect.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/trial_effects/training_model_fitting_trialeffect_sess2.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/trial_effects/analyze_stability_effects.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/trial_effects/analyze_trial_effects.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/surface_run_stability.csh
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/eras rois/ERAs_forLetitia_rois_nocorrcriteria_avgsessions_n0_tSNRERAsSD.m
+- [ ] /Volumes/Elements/HiHi/ERAs_no_tSNR_corr/test_plot_per_subject.m
+- [ ] /Volumes/Elements/HiHi/scripts/ERAs_forLetitia_rois_nocorrcriteria_avgsessions_n0_tSNRERAsSD.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/ERAs_rois_nocorrections.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/ERAs_ROIs_reshape_datatable.m
+- [ ] /Users/letitia/Dropbox/HiHi/scripts/training_model_fitting_roi_avg_no_ERA_SD_corr_fittingses1.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/scatterplot_parameters_audHRF_HiHi_modified020725.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/ROI_parameter_corr_plot_audHRF_HiHi.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/Py_scatterplot_bigplot_correct_CSV.py
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/Py_scatterplot_ROI_params_medians_commonsubj.py
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/MPM/MPM-sample-ROI-letitia.csh
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/scripts/MPM_fmri_analyses_dset1only.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/MPM/LME_221025.R
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/ROI_peak_fwhm_amp/zscore_fast_slow_maps.m
+- [ ] /Users/letitia/Dropbox/auditory_HRF/analyses_2025/ROI_peak_fwhm_amp/zscore_fast_slow_maps_colourscale.m
+- [ ] /Users/letitia/Dropbox/HiHi/scripts/FSaverage_Marty_ROIS.csh
