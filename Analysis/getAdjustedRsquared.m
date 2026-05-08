@@ -1,5 +1,7 @@
+% Description:
+% Calculate adjusted R-squared for a model prediction.
+%
 % Reference: https://uk.mathworks.com/help/stats/coefficient-of-determination-r-squared.html
-% co-efficient of determination 
 function adj_r_sq = getAdjustedRsquared(data, pred, num_params)
 
 residual = data(:) - pred(:);
