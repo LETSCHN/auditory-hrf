@@ -31,7 +31,3 @@ Large derived data files are not included as source code in the GitHub upload. T
 - output ROI parameter `.txt`, `.nii.gz`, `.mgh`, `.mat`, and `.xlsx` files
 
 The GitHub-facing scripts use placeholder paths such as `/path/to/external_drive/...` and `/path/to/auditory_HRF/...`.
-
-## Notes
-
-- The GitHub cleanup for this workflow was limited to filename changes, path/participant anonymisation already present in the GitHub copies, and documentation updates.
