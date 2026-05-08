@@ -7,7 +7,7 @@
 % noise at 1st two timepoints is low (1 stdev), then 3 stdev for later
 % timepoints
 %
-% IZ (2025)
+% Analyst note (2025)
 
 clear
 close all
