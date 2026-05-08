@@ -1,13 +1,20 @@
-%%This script gets input from the "ROI_combined_data" spreadsheet created
-%%in "create datatable ROIs params" script and averages parameters of
-%%interest across hemispheres, creates z scores for all ROIs per
-%%participant and dataset and saves them for usage in "z score fast slow
-%%colourscale" script
-
-%%LS November 25 (updated March 26 to include amplitude and perform analysis on all participants across datasets)
+%% This script reads ROI_combined_data.xlsx, averages ROI parameters across
+%% hemispheres, computes participant-level z-scores for each dataset, and
+%% saves per-dataset z-score files for the fast-slow ROI colour maps.
+%% Dataset1/dset1 is the original dataset; Dataset2/dset2 is the replication
+%% dataset.
+%%
+%% Input:
+%% - ROI_combined_data.xlsx from create_roi_parameter_datatable.m.
+%% Output:
+%% - dataset1_zscores.mat and dataset2_zscores.mat, each containing ROI
+%%   names plus peak and amplitude z-scores.
+%%
+%% Last changed May 2026 (LS)
+%% LS November 25 (updated March 26 to include amplitude and perform analysis on all participants across datasets)
 clear;clc;close all
 % Load the data
-data = readtable('/Users/letitia/Dropbox/auditory_HRF/analyses_2025/ROI_peak_fwhm_amp/ROI_combined_data.xlsx');
+data = readtable('/path/to/auditory_HRF/analyses_2025/ROI_peak_fwhm_amp/ROI_combined_data.xlsx');
 
 % Convert Peak to numeric
 data.Peak = str2double(string(data.Peak));
@@ -68,15 +75,10 @@ end
 % Display first few rows
 disp(groupData(1:10,:));
 
-% Save result
-% writetable(groupData, 'group_mean_zscores_March26.csv');
-%% STEP 3: Save results
-% writetable(avgData, 'zscore_peaks_amps_avgHem_March26.csv');
-
 % Display first few rows
 disp(avgData(1:10,:));
 
-%% STEP 4: Save per-dataset z-score files for colour mapping
+%% STEP 3: Save per-dataset z-score files for colour mapping
 roi_names = {'A1','AL','CL', 'CM', 'CP', 'C_A4', 'ML', 'MM', 'MPc', 'MPr', ...
     'M_A4', 'R', 'RM', 'RP', 'RT', 'RTL', 'R_A4', 'TA2', 'TA3'};
 
