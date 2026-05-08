@@ -6,7 +6,7 @@
 % save fittedAmpPeakFWHM_ROIs_cutoff1500_allsess.mat files in updated_model6.
 % This script exports peak, FWHM, and amplitude text files for both the
 % original and replication datasets. The text files are used by
-% project_roi_parameters_to_surface.csh to create volume/surface parameter maps.
+% supplementary surface-projection scripts to create volume/surface parameter maps.
 %
 % Folder: /path/to/external_drive/auditory_HRF/analyses_2025/updated_model6
 
