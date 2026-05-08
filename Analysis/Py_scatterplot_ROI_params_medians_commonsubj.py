@@ -1,3 +1,6 @@
+# Description:
+# Plot dataset-comparison scatterplots for median ROI HRF parameters in
+# common subjects, with label adjustment and basic input validation.
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -6,8 +9,8 @@ import numpy as np
 from scipy.stats import pearsonr
 
 # Paths
-filename = '/Users/letitia/Dropbox/auditory_HRF/analyses_2025/ROI_peak_fwhm_amp/ROI_combined_data.xlsx'
-outpath = '/Users/letitia/Dropbox/auditory_HRF/analyses_2025/dataset_comparison/comparison_grid_all_pairs'
+filename = '/path/to/auditory_HRF/analyses_2025/ROI_peak_fwhm_amp/ROI_combined_data.xlsx'
+outpath = '/path/to/auditory_HRF/analyses_2025/dataset_comparison/comparison_grid_all_pairs'
 
 # ----------------------------
 # Load data + minimal validation

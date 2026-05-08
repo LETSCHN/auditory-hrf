@@ -1,4 +1,8 @@
 function bf = create_basisfunction(amp)
+% Description:
+% Create the canonical HRF basis set and temporal/dispersion derivatives
+% used by the cluster-mean fitting scripts.
+
 %% get 3 basis functions with TR = 1
 dt = 1;
 fMRI_T   = spm_get_defaults('stats.fmri.t');
