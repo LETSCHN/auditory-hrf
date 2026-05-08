@@ -1,7 +1,14 @@
-% This script is used to assess the relationship between proxies of
-% myelination and HRF temporal characteristics
+% This script creates a combined table that allows us to explore the
+% relationship between proxies of myelination and HRF temporal characteristics
 %
 % This is only done for participants from dset1 that are also in dset2 (n=4)
+%
+% Input:
+% - Previously extracted MPM ROI table text files.
+% - ROI_combined_data.xlsx containing ROI HRF parameters.
+% Output:
+% - dset1_ROI_params_MPM_combined_data.csv, combining R1 and ROI HRF
+%   parameters by participant, hemisphere, and ROI.
 %
 % Important: When values are loaded from different files, be mindful of
 % different labeling of subjects
@@ -12,19 +19,19 @@ clc
 close all
 
 % ==============
-fmridir = '/Users/letitia/Dropbox/auditory_HRF/analyses_2025/ROI_peak_fwhm_amp/';
+fmridir = '/path/to/auditory_HRF/analyses_2025/ROI_peak_fwhm_amp/';
 % Setup
-mpmdir = '/Users/letitia/Dropbox/auditory_HRF/analyses_2025/MPM/Tables-251025';
+mpmdir = '/path/to/auditory_HRF/analyses_2025/MPM/Tables-251025';
 hemisphere = {'lh', 'rh'};
 param = {'R1'};
-subject = {'LS', 'RR', 'MG', 'FD','IM'};
+subject = {'dataset1_sub01', 'dataset1_sub02', 'dataset1_sub03', 'dataset1_sub04','dataset1_sub05'};
 target_rois = {'CL', 'CM', 'CP', 'C_A4', 'M_A4', 'MPr', 'MPc', ...
                'AL', 'ML', 'MM', 'A1', 'R_A4', 'RT', 'RTL', 'R', 'RM', ...
                'RP', 'TA2', 'TA3'};
 
 % Subject mapping (different here because dset1!!)
 subject_map = containers.Map( ...
-    {'LS', 'RR', 'MG', 'FD','IM'}, ...
+    {'dataset1_sub01', 'dataset1_sub02', 'dataset1_sub03', 'dataset1_sub04','dataset1_sub05'}, ...
     {'s01', 's02', 's03', 's04','s05'} ...
 );
 
