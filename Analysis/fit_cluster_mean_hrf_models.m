@@ -252,36 +252,36 @@ for i = 1:size(clusters,1)
     subplot(4,2,7); plot(f5{i},xx,data); title(['m5: ' num2str(rsq(5,i))]); grid on;
     subplot(4,2,8); plot(f6{i},xx,data); title(['m6: ' num2str(rsq(6,i))]); grid on;
 
-    %Plots
-%     figure(100+i); clf
-%     p1 = plot(xx,data,'o');
-%     set(p1,{'Color','LineWidth'},{'k',2});
-%     hold on;
-%     p2 = plot(xx,canonical_bold);
-%     set(p2,{'Color','Linestyle','LineWidth'},{'b','--',2});
-%     p3 = plot(xx,bfs_bold);
-%     set(p3,{'Color','Linestyle','LineWidth'},{'g','--',2});
-%     p4 = plot(xx,glm_single(best_basis,:));
-%     set(p4,{'Color','Linestyle','LineWidth'},{'m','--',2});
-%     hold on;
-%     p5 = plot(xx, custom_model_bold);
-%     set(p5,{'Color','Linestyle','LineWidth'},{'r','--',2});
-% 
-%     x = gca; x.YLim = [-0.4 0.75]; x.FontSize = 14;
-%     xlabel('Time(s)'); ylabel('Signal Change (%)');
-%     if isnan(bm(i)) || isnan(rsq_custom(i))
-%         best_model_text = 'Best model fit: None';
-%     else
-%         best_model_text = ['Best model fit: ' num2str(bm(i)) ', gof: ' num2str(rsq_custom(i), '%.4f')];
-%     end
-%     legend({ ...
-%         'Data', ...
-%         ['Canonical HRF, gof: ' num2str(rsq_canonical(i), '%.4f')], ...
-%         ['Informed basis set, gof: ' num2str(rsq_bfs(i), '%.4f')], ...
-%         ['GLM single HRF, gof: ' num2str(max_rsq(i), '%.4f')], ...
-%         best_model_text ...
-%         });
-%     grid on;
+    %Diagnostic Plots
+    figure(100+i); clf
+    p1 = plot(xx,data,'o');
+    set(p1,{'Color','LineWidth'},{'k',2});
+    hold on;
+    p2 = plot(xx,canonical_bold);
+    set(p2,{'Color','Linestyle','LineWidth'},{'b','--',2});
+    p3 = plot(xx,bfs_bold);
+    set(p3,{'Color','Linestyle','LineWidth'},{'g','--',2});
+    p4 = plot(xx,glm_single(best_basis,:));
+    set(p4,{'Color','Linestyle','LineWidth'},{'m','--',2});
+    hold on;
+    p5 = plot(xx, custom_model_bold);
+    set(p5,{'Color','Linestyle','LineWidth'},{'r','--',2});
+
+    x = gca; x.YLim = [-0.4 0.75]; x.FontSize = 14;
+    xlabel('Time(s)'); ylabel('Signal Change (%)');
+    if isnan(bm(i)) || isnan(rsq_custom(i))
+        best_model_text = 'Best model fit: None';
+    else
+        best_model_text = ['Best model fit: ' num2str(bm(i)) ', gof: ' num2str(rsq_custom(i), '%.4f')];
+    end
+    legend({ ...
+        'Data', ...
+        ['Canonical HRF, gof: ' num2str(rsq_canonical(i), '%.4f')], ...
+        ['Informed basis set, gof: ' num2str(rsq_bfs(i), '%.4f')], ...
+        ['GLM single HRF, gof: ' num2str(max_rsq(i), '%.4f')], ...
+        best_model_text ...
+        });
+    grid on;
 
     disp(['Best model: ' num2str(bm(i)) ' , R-sq (adj, custom model): ' num2str(rsq_custom(i))]);
     %     pause;
