@@ -1,14 +1,26 @@
-% this scripts takes the output of trial effects training to find stable
-% voxels. These are characterized by tracking final r-sq which doesn't vary a lot
-% (pcnt% of final value) when getting data from runs 1, 1&2, 12&3... to all runs
-% combined. 
+% This script takes the output of trial-effects training to find stable
+% voxels. These are characterized by tracking final r-sq, which does not
+% vary substantially (pcnt% of final value) as runs are added.
+%
+% Input:
+% - smoothed_data_cutoff1500_ERA_SD_CORR85.mat, containing voxel coordinates
+%   vox_corr_th_85_XYZ.
+% - training_s0X_trialeffect.mat files from fit_trial_effect_models_all_sessions.m,
+%   containing rsq.
+% Output:
+% - stability_allsubs_20pcnt.mat, containing output_stability.
+% - stability_textfiles_20pcnt.mat, containing output_stability_run and
+%   output_stability_rsq.
+% - Subject-specific s0X_run.txt and s0X_rsq.txt files for surface projection.
+%
+% Last changed May 2026 (LS)
 
 clear
 clc
 close all
 
-% inpath = ['/Volumes/Elements/auditory_HRF/analyses_2025'];
-inpath = ['/Users/letitia/Dropbox/auditory_HRF/analyses_2025/trial_effects'];
+% inpath = ['/path/to/external_drive/auditory_HRF/analyses_2025'];
+inpath = ['/path/to/auditory_HRF/analyses_2025/trial_effects'];
 
 load([inpath '/smoothed_data_cutoff1500_ERA_SD_CORR85.mat'],'vox_corr_th_85_XYZ', 'all_reps_eras_norm');
 
@@ -32,20 +44,13 @@ for s = 1:5
         rsq(model,itrs,:) = all_combs.rsq(model,itrs,:);
     end
 
-    bm = []; rsquare = []; rsq_std = []; stability = [];
+    bm = []; rsquare = []; stability = [];
 
     % for all combinations of data get the best model and rsq for bm
     for itr = itrs
         [rsquare(itr,:),bm(itr,:)] = max(squeeze(rsq(:,itr,:)));
 
     end
-
-%     histogram(rsquare(6,:));
-% 
-%     rsq_th = prctile(rsquare(6,:),80)
-% 
-%     vox_A = find(rsquare(6,:) > rsq_th); % voxels with high r-sq
-% 
 
     % ==== get winning model from all 6 runs, track stability of that model
     for vox = 1:size(rsquare,2)
@@ -80,24 +85,6 @@ for s = 1:5
     output_stability{s} = [vox_corr_th_85_XYZ{s,1}, bm(6,:)', stability(:,6), stable_rep']; % add voxel XYZ, average last column for each voxel and see which run you get
     % rsq value, what run(s) rsq hits 10% of that value and stays
 
-
-    % % rsq differences
-    % rsq_std = nanstd(stability,[],2);%mean(diff(stability'));
-    % histogram(rsq_std);
-    % 
-    % rsq_std_th = prctile(rsq_std,20)
-    % 
-    % vox_B = find(rsq_std < rsq_std_th);
-    % 
-    % % === voxels with high r-sq + low std over runs
-    % 
-    % 
-    % stable_voxels = intersect(vox_A, vox_B);
-    % stable_voxels_XYZ{s,sess} = vox_corr_th_85_XYZ{s,sess}(stable_voxels,:);
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
- 
 end
 
 save(outfile,'output_stability')
@@ -125,4 +112,9 @@ for subj = 1:5
     % Store the cleaned data
     output_stability_run{subj} = temp_run_clean;
     output_stability_rsq{subj} = temp_rsq_clean;
+
+    writematrix(temp_run_clean, ['s0' num2str(subj) '_run.txt'], 'Delimiter', 'tab');
+    writematrix(temp_rsq_clean, ['s0' num2str(subj) '_rsq.txt'], 'Delimiter', 'tab');
 end
+
+save(['stability_textfiles_' num2str(pcnt) 'pcnt.mat'], 'output_stability_run', 'output_stability_rsq');
