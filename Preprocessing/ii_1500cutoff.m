@@ -10,17 +10,17 @@
 clear
 clc
 close all
-addpath('/Volumes/Elements/HiHi');
+addpath('/path/to/processed_timecourses');
 
 % ==========
-inpath = '/Volumes/Elements/HiHi';
+inpath = '/path/to/processed_timecourses';
 % input file: inpath/s0X_timecourse_sessY_partZ.mat
 
 outpath = inpath; % output directory
 outfile = '_cutoff1500.mat'; % s0X_sessY_outfile
 
-nSessions = 1:4;
-subjects = 1:7; % 1:n
+nSessions = 1:2;
+subjects = 1:5; % 1:n
 nParts = 2; % check how many part .mat files were created in pre-proc step i
 % =========
 

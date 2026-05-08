@@ -14,17 +14,17 @@
 clear
 clc
 close all
-addpath('/Volumes/backup_ucl/Letitia/pre-processing scripts/');
+addpath('/path/to/preprocessing_scripts');
 
 % ============
-inpath = '/Volumes/backup_ucl/Letitia/Data_Isma/all_data/all_voxels_smoothed';
+inpath = '/path/to/processed_timecourses';
 infile = '_cutoff1500_common_sessions.mat'; % s0X_sessY_outfile
-onset_file = '/Volumes/backup_ucl/Letitia/Data_Isma/concat_Runs1-6StimTimesHRF.1D'; % concatenated for all runs to match voxel time course data
+onset_file = '/path/to/stimulus_onsets.1D'; % concatenated for all runs to match voxel time course data
 
 outpath = inpath;
-outfile = '/vox_cutoff1500_cmnSessions_ERA_SD.mat'; % s0X_outfile, ONLY voxel indices
+outfile = '/vox_cutoff1500_common_sessions_ERA_SD.mat'; % s0X_outfile, ONLY voxel indices
 
-lims = [-13 12]; % ERA limits... note these as min and max for all subjects from s0X_cutoff1500_commonsessions_stats.mat
+lims = [-13 12]; % ERA limits... note these as min and max for all subjects from s0X_cutoff1500_common_sessions_stats.mat
 lim_sd = 2.7; % std dev limits... avg/max
 
 nSessions = 1:2; 
@@ -115,11 +115,11 @@ for sub = subjects
 
     disp(['Final nvox: ' num2str(length(temp))]);
 
-    vox_1500_cmnSessions_ERA_SD{sub} = temp;
-    vox_1500_cmnSessions_ERA_SD_XYZ{sub} = voxels_XYZ(vox_1500_cmnSessions_ERA_SD{sub},:);
+    vox_1500_common_sessions_ERA_SD{sub} = temp;
+    vox_1500_common_sessions_ERA_SD_XYZ{sub} = voxels_XYZ(vox_1500_common_sessions_ERA_SD{sub},:);
 
     toc
 end
 
-save([outpath outfile],"vox_1500_cmnSessions_ERA_SD_XYZ",'vox_1500_cmnSessions_ERA_SD');
+save([outpath outfile],"vox_1500_common_sessions_ERA_SD_XYZ",'vox_1500_common_sessions_ERA_SD');
 

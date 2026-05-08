@@ -20,15 +20,15 @@
 clear
 clc
 close all
-addpath('/Volumes/Elements/auditory_HRF');
+addpath('/path/to/processed_timecourses');
 
 % ============ 
-inpath = '/Volumes/Elements/auditory_HRF';
+inpath = '/path/to/processed_timecourses';
 infile = '_cutoff1500_common_sessions.mat'; % s0X_sessY_infile
-onset_file = '/Volumes/Elements/auditory_HRF/concat_Runs1-6StimTimesHRF.1D'; % concatenated for all runs to match voxel time course data
+onset_file = '/path/to/stimulus_onsets.1D'; % concatenated for all runs to match voxel time course data
 
 outpath = inpath;
-outfile_cutoff = '_cutoff1500_commonsessions_stats.mat'; % s0X_outfile
+outfile_cutoff = '_cutoff1500_common_sessions_stats.mat'; % s0X_outfile
 outfile_sd = '_all_sd_cutoff1500_commonsesssions.mat'; % s0X_outfile, all sd saved in case needed
 
 nSessions = 1:4;

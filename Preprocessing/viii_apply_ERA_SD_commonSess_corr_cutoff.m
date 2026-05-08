@@ -21,13 +21,13 @@
 % IZ (2025)
 
 clear; clc; close all
-addpath('/Volumes/backup_ucl/Letitia/pre-processing scripts/');
+addpath('/path/to/preprocessing_scripts');
 
 % ==================
-inpath = '/Volumes/backup_ucl/Letitia/Data_Isma/all_data/all_voxels_smoothed';
+inpath = '/path/to/processed_timecourses';
 infile = '_cutoff1500_common_sessions.mat'; % s0X_sessY_outfile
-onset_file = '/Volumes/backup_ucl/Letitia/Data_Isma/concat_Runs1-6StimTimesHRF.1D'; % concatenated for all runs to match voxel time course data
-voxel_file = '/vox_cutoff1500_commonSessions_cleanERA_SD_CORR.mat';
+onset_file = '/path/to/stimulus_onsets.1D'; % concatenated for all runs to match voxel time course data
+voxel_file = '/vox_cutoff1500_common_sessions_cleanERA_SD_CORR.mat';
 
 outpath = inpath;
 outfile = 'smoothed_data_cutoff1500_ERA_SD_CORR85.mat'; 

@@ -13,18 +13,18 @@
 clear
 clc
 close all
-addpath('/Users/letitia/Dropbox/auditory_HRF/Experiment1/Sep_2023/session_comparison_March');
+addpath('/path/to/session_comparison');
 
 % =================
-inpath = '/Users/letitia/Dropbox/auditory_HRF/Experiment1/Sep_2023/session_comparison_March/';
+inpath = '/path/to/session_comparison/';
 infile = '_meanspace_brain_smooth.txt'; % s0X_timecourse_ses0Y_infile
 
 outpath = inpath; % change here for output location
 % outfile will be outpath/s0X_timecourse_sessY_partZ.mat
 
-nSessions = 1:4;
-nTimePoints = 1452; % length of whole timecourse
-subjects = 1:7; % can put miltiple indices 1:n
+nSessions = 1:2;
+nTimePoints = 1668; % length of whole timecourse
+subjects = 1:5; % can put miltiple indices 1:n
 % =================
 
 for sub = subjects

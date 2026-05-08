@@ -17,17 +17,17 @@
 clear
 clc
 close all
-addpath('/Volumes/backup_ucl/Letitia/pre-processing scripts/');
+addpath('/path/to/preprocessing_scripts');
 
 % ==================
-inpath = '/Volumes/backup_ucl/Letitia/Data_Isma/all_data/all_voxels_smoothed';
+inpath = '/path/to/processed_timecourses';
 infile = '_cutoff1500_common_sessions.mat'; % s0X_sessY_outfile
-onset_file = '/Volumes/backup_ucl/Letitia/Data_Isma/concat_Runs1-6StimTimesHRF.1D'; % concatenated for all runs to match voxel time course data
-voxel_file = '/vox_cutoff1500_cmnSessions_ERA_SD.mat'; % this is the voxels computed in script v
+onset_file = '/path/to/stimulus_onsets.1D'; % concatenated for all runs to match voxel time course data
+voxel_file = '/vox_cutoff1500_common_sessions_ERA_SD.mat'; % this is the voxels computed in script v
 correlations_file = '/all_correlation_cutoffs_allSessions_cleanERA_SD.mat'; % has differnt limit values
 
 outpath = inpath;
-outfile = '/vox_cutoff1500_commonSessions_cleanERA_SD_CORR.mat';
+outfile = '/vox_cutoff1500_common_sessions_cleanERA_SD_CORR.mat';
 
 nSessions = 1:2;
 subjects = 1:5; % s0X 1:n
@@ -97,10 +97,10 @@ for sub = subjects
 
         % find which voxels are "stable" across checks CORR, ERA lims and
         % SD cutoff
-        vox_corr_th_70{sub,sess} = intersect(find(mean_r>lims_corr_70),vox_1500_cmnSessions_ERA_SD{sub});
-        vox_corr_th_85{sub,sess} = intersect(find(mean_r>lims_corr_85),vox_1500_cmnSessions_ERA_SD{sub});
-        vox_corr_th_90{sub,sess} = intersect(find(mean_r>lims_corr_90),vox_1500_cmnSessions_ERA_SD{sub});
-        vox_corr_th_95{sub,sess} = intersect(find(mean_r>lims_corr_95),vox_1500_cmnSessions_ERA_SD{sub});
+        vox_corr_th_70{sub,sess} = intersect(find(mean_r>lims_corr_70),vox_1500_common_sessions_ERA_SD{sub});
+        vox_corr_th_85{sub,sess} = intersect(find(mean_r>lims_corr_85),vox_1500_common_sessions_ERA_SD{sub});
+        vox_corr_th_90{sub,sess} = intersect(find(mean_r>lims_corr_90),vox_1500_common_sessions_ERA_SD{sub});
+        vox_corr_th_95{sub,sess} = intersect(find(mean_r>lims_corr_95),vox_1500_common_sessions_ERA_SD{sub});
 
         % get IJK coordinates
         vox_corr_th_70_XYZ{sub,sess} = voxels_XYZ(vox_corr_th_70{sub,sess},:);

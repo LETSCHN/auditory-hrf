@@ -12,17 +12,17 @@
 clear
 clc
 
-addpath('/Volumes/Elements/HiHi');
+addpath('/path/to/processed_timecourses');
 
 % ==============
-inpath = '/Volumes/Elements/HiHi';
+inpath = '/path/to/processed_timecourses';
 infile = '_cutoff1500.mat'; % s0X_sessY_outfile
 
 outpath = inpath;
 outfile = '_cutoff1500_common_sessions.mat';
 
-nSessions = 1:4;
-subjects = 1:7; % s0X, 1:5
+nSessions = 1:2;
+subjects = 1:5; 
 
 % ==============
 

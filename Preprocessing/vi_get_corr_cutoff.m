@@ -16,16 +16,18 @@
 %         single output file for all subjects
 %  Correlation plots per subject + Figure 1000 for all subjects
 
+% IZ (2025)
+
 clear
 clc
 close all
-addpath('/Volumes/backup_ucl/Letitia/pre-processing scripts/');
+addpath('/path/to/preprocessing_scripts');
 
 % ==============
-inpath = '/Volumes/backup_ucl/Letitia/Data_Isma/all_data/all_voxels_smoothed';
+inpath = '/path/to/processed_timecourses';
 infile = '_cutoff1500_common_sessions.mat'; % s0X_sessY_outfile
-onset_file = '/Volumes/backup_ucl/Letitia/Data_Isma/concat_Runs1-6StimTimesHRF.1D'; % concatenated for all runs to match voxel time course data
-voxel_file = '/vox_cutoff1500_cmnSessions_ERA_SD.mat'; % this is the voxels computed in script v
+onset_file = '/path/to/stimulus_onsets.1D'; % concatenated for all runs to match voxel time course data
+voxel_file = '/vox_cutoff1500_common_sessions_ERA_SD.mat'; % this is the voxels computed in script v
 
 outpath = inpath;
 outfile = '/all_correlation_cutoffs_allSessions_cleanERA_SD.mat';
@@ -53,7 +55,7 @@ for sub = subjects
         load([inpath '/s0' num2str(sub) '_ses' num2str(sess) infile]);
  
         % get data from coxels that survive ERA and SD corrections
-        voxel_time_course = voxel_time_course(vox_1500_cmnSessions_ERA_SD{sub},:);
+        voxel_time_course = voxel_time_course(vox_1500_common_sessions_ERA_SD{sub},:);
         
         voxels = 1:size(voxel_time_course(:,1));
 
