@@ -13,7 +13,7 @@ clear
 clc
 
 inpath = '/path/to/auditory_HRF/analyses_2025/Marty_ROIs_090125';
-all_rois = {'rh_CL', 'rh_CM', 'rh_CP','rh_C_A4','rh_C_A5', 'rh_M_A4', 'rh_M_A5', 'rh_MPr', 'rh_MPc', 'rh_AL', 'rh_ML', 'rh_MM', 'rh_A1', 'rh_R_A4', 'rh_R_A5','rh_RT', 'rh_RTL', 'rh_R', 'rh_RM', 'rh_RP', 'rh_TA2', 'rh_TA3'}; % filename sX_roiName.txt
+all_rois = {'rh_CL', 'rh_CM', 'rh_CP','rh_C_A4', 'rh_M_A4', 'rh_MPr', 'rh_MPc', 'rh_AL', 'rh_ML', 'rh_MM', 'rh_A1', 'rh_R_A4','rh_RT', 'rh_RTL', 'rh_R', 'rh_RM', 'rh_RP', 'rh_TA2', 'rh_TA3'}; % filename sX_roiName.txt
 
 % this extension is added to filename at the end at the output
 updated_file_ext = '_new';
