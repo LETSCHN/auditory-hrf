@@ -127,6 +127,14 @@ for row_idx, (repl_id, orig_id) in enumerate(pairs):
             )
             ax.margins(x=0.18, y=0.18)
 
+            # Draw y = x behind the points without changing the axis limits.
+            x_limits = ax.get_xlim()
+            y_limits = ax.get_ylim()
+            ax.axline((0, 0), slope=1, color='black', linestyle='--',
+                      linewidth=1.5, zorder=0)
+            ax.set_xlim(x_limits)
+            ax.set_ylim(y_limits)
+
             texts = [
                 ax.text(x, y, label, fontsize=ROI_LABEL_FONTSIZE)
                 for x, y, label in zip(origVals, replVals, commonROIs)
@@ -187,7 +195,8 @@ for row_idx, (repl_id, orig_id) in enumerate(pairs):
 fig.legend(
     handles=legend_handles,
     loc='upper left',
-    bbox_to_anchor=(0.08, 0.985),
+    bbox_to_anchor=(0.11, 0.985),
+    ncol=2,
     fontsize=LEGEND_FONTSIZE,
     frameon=True,
     framealpha=0.9,
@@ -197,13 +206,26 @@ fig.legend(
 )
 
 plt.subplots_adjust(
-    left=0.08,
+    left=0.11,
     right=0.985,
     top=0.89,
     bottom=0.065,
     wspace=0.34,
     hspace=0.30
 )
+
+for row_idx, (_, orig_id) in enumerate(pairs):
+    row_box = axes[row_idx, 0].get_position()
+    row_center = row_box.y0 + row_box.height / 2
+    fig.text(
+        0.025,
+        row_center,
+        orig_id,
+        fontsize=TITLE_FONTSIZE,
+        fontweight='bold',
+        ha='left',
+        va='center'
+    )
 
 dpi = 300
 fig.savefig(f"{outpath}.png", dpi=dpi)
